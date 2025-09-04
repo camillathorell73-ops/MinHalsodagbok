@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Hälsodagbok</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Min Hälsodagbok</h1>
+    <form id="healthForm">
+        <label for="smarta">1. Bedöm smärtan idag (1=lite, 5=mycket):</label>
+        <select id="smarta" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="tabletter">2. Hur många gånger har du tagit tabletter?</label>
+        <select id="tabletter" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+
+        <fieldset>
+            <legend>3. Har du gjort dina övningar idag?</legend>
+            <label><input type="radio" name="ovningar" value="ja" required> Ja</label>
+            <label><input type="radio" name="ovningar" value="nej"> Nej</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>4. Känner du dig frisk?</legend>
+            <label><input type="radio" name="frisk" value="ja" required> Ja</label>
+            <label><input type="radio" name="frisk" value="nej"> Nej</label>
+        </fieldset>
+        
+        <label for="vader">5. Vad har det varit för väder idag?</label>
+        <input type="text" id="vader" placeholder="T.ex. soligt, regn...">
+
+        <label for="gjort">6. Vad har du gjort idag?</label>
+        <textarea id="gjort" rows="3" placeholder="T.ex. jobbat, promenerat..."></textarea>
+        
+        <label for="anteckningar">7. Övriga anteckningar:</label>
+        <textarea id="anteckningar" rows="4" placeholder="Fria anteckningar..."></textarea>
+
+        <button type="submit">Spara dagens svar</button>
+    </form>
+    
+    <hr>
+    
+    <h2>Din historik</h2>
+    <div class="chart-container">
+        <canvas id="healthChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
