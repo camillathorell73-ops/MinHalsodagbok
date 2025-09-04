@@ -9,6 +9,7 @@
 <body>
     <h1>Min Hälsodagbok</h1>
     <form id="healthForm">
+        <!-- Ditt formulär är detsamma som förut, inga ändringar här -->
         <label for="smarta">1. Bedöm smärtan idag (1=lite, 5=mycket):</label>
         <select id="smarta" required>
             <option value="1">1</option>
@@ -52,10 +53,20 @@
     <hr>
     
     <h2>Din historik</h2>
+
+    <!-- NYTT: Knappar för att välja tidsperiod -->
+    <div id="filter-controls">
+        <button class="filter-btn active" data-days="14">14 dagar</button>
+        <button class="filter-btn" data-days="30">30 dagar</button>
+        <button class="filter-btn" data-days="90">90 dagar</button>
+        <button class="filter-btn" data-days="0">Visa alla</button>
+    </div>
+
     <div class="chart-container">
         <canvas id="healthChart"></canvas>
     </div>
 
+    <!-- Inkludera Chart.js biblioteket -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
 </body>
